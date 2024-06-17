@@ -6,11 +6,11 @@ function Header() {
         <div className="header">
             <div className="header_left">
                 {/* <img src="" alt="" /> */}
-                <h2><a href="#">Game</a></h2>
+                <h2><a href="Home">Game</a></h2>
             </div>
             <div className="header_center">
                 <ul className="header_lists">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="Home">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#"> Blog</a></li>
                     <li><a href="#"> Contract</a></li>

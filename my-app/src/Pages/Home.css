@@ -1,0 +1,25 @@
+.App {
+    text-align: center;
+  }
+
+.App .top-bar{
+    background-color: #F6DA6F;
+    height: 628px;
+    padding: 30px;
+  
+  }
+
+.App .top-bar .quote{
+    padding:50px;
+    font-size: 90px;
+}
+  
+.container {
+    justify-content: center;
+    min-width: 400px;
+    max-width: 3000px;
+    margin: 0 auto;
+    display: flex;
+    column-gap: 20px;
+    padding: 50px;
+}
