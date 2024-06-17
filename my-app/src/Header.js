@@ -18,7 +18,9 @@ function Header() {
                 </ul>
             </div>
             <div className="header_right">
-                <button>Help me Find</button>
+                <button>
+                <i class="bi bi-search"></i>
+                Help me Find</button>
 
             </div>
         </div>

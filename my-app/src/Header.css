@@ -27,6 +27,10 @@
     justify-content: center;
     align-items: center;
 }
+.header_right>button{
+    background-color: black;
+    color: white;
+}
 .header_center{
     display: flex;
     justify-content: center;
@@ -35,6 +39,7 @@
 
 .header_lists>li {
     display: inline-block;
+    margin-top:5px;
     list-style-type: none;
     padding: 24px;
 }
