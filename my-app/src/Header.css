@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    text-align: center;
     background-color: #F6DA6F;
 }
 .header_left{
@@ -28,8 +29,13 @@
     align-items: center;
 }
 .header_right>button{
+    padding: 5px;
     background-color: black;
     color: white;
+    width: 273px;
+    height: 49px;
+    border-radius: 5px;
+    
 }
 .header_center{
     display: flex;
@@ -39,7 +45,7 @@
 
 .header_lists>li {
     display: inline-block;
-    margin-top:5px;
+    margin-top:20px;
     list-style-type: none;
     padding: 24px;
 }
