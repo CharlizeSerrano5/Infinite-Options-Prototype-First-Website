@@ -10,8 +10,13 @@
   }
 
 .App .top-bar .quote{
-    padding:50px;
-    font-size: 90px;
+    padding:90px;
+    font-size: 60px;
+    margin-left: 90px;
+    margin-right: 90px;
+    font-family: "Irish Grover", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
   
 .container {

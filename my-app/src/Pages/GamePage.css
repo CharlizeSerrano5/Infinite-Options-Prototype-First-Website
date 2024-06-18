@@ -1,34 +1,85 @@
+.page{
+    text-align: center;
+}
+
 .top-bar{
     background-color: #F6DA6F;
-    height: 628px;
+    height: 750px;
     padding: 30px;
   
   }
   
-.top-bar .quote{
-padding:50px;
-font-size: 90px;
+
+.top-content{
+    padding: 20px;
+    max-width: 2000px;
+    max-height: 50px;
+    margin: 0 auto;
+    display: inline-block;
+} 
+.top-bar .game-name{
+    font-size: 60px;
+    font-style: bold;
+    text-align: left;
+    color: black;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
-  
+
 .rating-container{
-    justify-content: center;
+
+    justify-content: left;
     min-width: 400px;
     max-width: 3000px;
     margin: 0 auto;
     display: flex;
     column-gap: 50px;
+}
+
+.review{
+    text-align: left;
+    max-width: 600px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+}
+
+.review-title{
+    font-size: 32px;
+    font-weight: 400;
+
+    margin-bottom: 8px;
+}
+
+.review-paragraph{
+    margin-bottom: 8px;
+}
+
+.rating{
     padding: 50px;
 }
 
 
-.top-content{
-max-width: 2000px;
-max-height: 50px;
-margin: 0 auto;
-display: flex;
-}
-
-.fraction{
-    font-size: 50px;
+.fraction-container{
     border-style: dotted;
+    width: 152px;
+    height: 176px;
+
+}
+.fraction{
+    vertical-align: center;
+    justify-content: center;
+    font-size: 50px;
 }
