@@ -1,6 +1,8 @@
 import Header from '../Components/Header';
 import Star from '../Components/StarTrial';
 import Video from '../Components/Video';
+import StarRating from '../Components/StarRating';
+
 
 import './GamePage.css'
 
@@ -43,12 +45,16 @@ export default function GamePage({}) {
                 </div>
                 
                 <div className='stars'>
-                    <Star
+                    {/* <Star
                     size='60'
+                    /> */}
+                    <StarRating
+                        size='60'
+                        ratingValue={4}
+                        default_color="black"
+                        empty_color="white"
                     />
-                  
                 </div>
-                
               </div>
             </div>
           </div>

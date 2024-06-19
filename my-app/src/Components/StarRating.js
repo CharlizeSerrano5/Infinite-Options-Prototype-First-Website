@@ -4,20 +4,20 @@ import Star from './Star';
 import './star-fill.svg';
 
 
-function StarRating({default_color, ratingValue}){
-    // for (let i =0; i< 5; i++){
-    //     console.log("yes");
-    // }
+function StarRating({empty_color, default_color, ratingValue, size='16'}){
     return(
         <div className='stars-rating'>
-            {[...Array(5)].map(star => {
+            {[...Array(ratingValue)].map(star => {
                 return(
-                <Star color="default_color" size="16"/>
+                <Star color={default_color} size={size}/>
                 )
                 
             })}
-            
-            
+            {[...Array(5-ratingValue)].map(star => {
+                return(
+                <Star color={empty_color} size={size}/>
+                )       
+            })}
         </div>    
     )
 }

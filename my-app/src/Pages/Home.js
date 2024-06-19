@@ -95,6 +95,7 @@ export default function Home({jsonList}) {
 
         <div className='games-container'> 
             {jsonList.map(listItem => (
+                // uncomment and recomment - the issue is local storage
                 console.log('works'),
                 console.log('listItem: ', listItem),
                 
@@ -108,8 +109,6 @@ export default function Home({jsonList}) {
             
 
         </div>
-    
-        <StarRating></StarRating>
     </div>
 
   );

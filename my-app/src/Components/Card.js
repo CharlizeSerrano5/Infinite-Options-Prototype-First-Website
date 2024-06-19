@@ -1,6 +1,7 @@
 import React from 'react'
 import './Card.css'
 import Star from './StarTrial'
+import StarRating from './StarRating'
 import { Route } from 'react-router-dom'
 function Card({title, imageUrl, body}) {
     function passVariables(){
@@ -18,9 +19,15 @@ function Card({title, imageUrl, body}) {
                     {title}
                 </div>
                 <div>
-                    <Star 
+                    {/* <Star 
                     size='16'
                     color="gold"
+                    /> */}
+                    <StarRating
+                        size='16'
+                        ratingValue={4}
+                        default_color="gold"
+                        empty_color="lightgray"
                     />
                 </div>
                 
