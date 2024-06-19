@@ -1,6 +1,7 @@
 import React from 'react'
 import './Card.css'
-import Star from './Star'
+import Star from './StarTrial'
+import { Route } from 'react-router-dom'
 function Card({title, imageUrl, body}) {
   return (
     <div className='card-container'>
@@ -12,9 +13,12 @@ function Card({title, imageUrl, body}) {
                 <div className='card-title'>
                     {title}
                 </div>
-                <p>
-                    <Star />
-                </p>
+                <div>
+                    <Star 
+                    size='16'
+                    color="gold"
+                    />
+                </div>
                 
             </div>
         </a>

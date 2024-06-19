@@ -5,7 +5,6 @@
 .App .top-bar{
     background-color: #F6DA6F;
     height: 628px;
-    padding: 30px;
   
   }
 
@@ -19,7 +18,7 @@
     font-style: normal;
 }
   
-.container {
+.games-container {
     justify-content: center;
     min-width: 400px;
     max-width: 3000px;

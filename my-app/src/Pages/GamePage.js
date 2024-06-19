@@ -1,8 +1,10 @@
 import Header from '../Components/Header';
-import Star from '../Components/Star';
+import Star from '../Components/StarTrial';
+import Video from '../Components/Video';
+
 import './GamePage.css'
 
-export default function GamePage() {
+export default function GamePage({}) {
   return (
     <div className="page">
       <div className='top-bar'>
@@ -23,7 +25,6 @@ export default function GamePage() {
                   There are a number of interesting decisions for the player to make about trades. I've seen screw-you trade alliances against players, but because only three are needed for a set, which can then be upgraded indefinitely, it's fairly common for only two players to bargain back and forth over a set. One has two properties and the other has one. This usually means that a single inexperienced player can make a single trade which tips the game, especially if they're trading St James Place for Boardwalk, giving the other player a complete set.
                 </p>    
               </div>
-            
               <div className='rating'>
                 <h2>
                   My Rating
@@ -36,6 +37,7 @@ export default function GamePage() {
                 
                 <div className='stars'>
                     <Star
+                    size='60'
                     />
                   
                 </div>
@@ -46,9 +48,24 @@ export default function GamePage() {
         </div>
         
       <div className='video-content'>
-        <iframe width="420" height="315" src="https://www.youtube.com/watch?v=AuWvMgYv03g">
-        </iframe> 
+        <Video
+                title='How to Play'
+                video='https://www.youtube.com/embed/AuWvMgYv03g?si=cb7Rc8A_TeQptOVM'
+        />
+        <Video
+                title='Demo Game'
+                // src="https://www.youtube.com/watch?v=AuWvMgYv03g" 
+                video='https://www.youtube.com/embed/iP0kh9yZak8?si=rqRPF8ejNGpL1_cf'
+
+        />
+        <Video
+                title='Strategy Tips'
+                // src="https://www.youtube.com/watch?v=AuWvMgYv03g"
+                video='https://www.youtube.com/embed/s-r38R6jtgk?si=5wa33eq5s3hE7MBh'
+        />
       </div>   
+
+      
                   
     </div>
   );

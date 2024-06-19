@@ -31,14 +31,22 @@
     align-items: center;
 }
 .header_right>button{
+    display: inline-block;
+
     padding: 5px;
     background-color: black;
     color: white;
     width: 273px;
     height: 49px;
     border-radius: 5px;
-    
 }
+.header_right>button>svg{
+    width: 30px;
+    height: 30px;
+    padding-right: 8px;
+}
+
+
 .header_center{
     display: flex;
     justify-content: center;

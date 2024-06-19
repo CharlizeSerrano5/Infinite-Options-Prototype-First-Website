@@ -1,0 +1,8 @@
+.stars{
+    display: inline-block;
+
+}
+
+.stars>svg{
+    margin: 3px;
+}

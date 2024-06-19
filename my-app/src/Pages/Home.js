@@ -1,5 +1,9 @@
 import Header from '../Components/Header';
+import SortBar from '../Components/SortBar';
+
 import Card from '../Components/Card';
+import StarRating from '../Components/StarRating';
+
 import './Home.css'
 
 export default function Home() {
@@ -8,11 +12,22 @@ export default function Home() {
         <div className='top-bar'>
             <Header></Header>
             <div className="quote">
-            Level Up Your Gaming Experience Dive into the Ultimate Blog for Gamers!
+                <p>
+                    Level Up Your Gaming Experience: 
+
+                </p>
+                <p>
+                    Dive into the Ultimate Blog for
+                </p>
+                <p>
+                    Gamers!
+                </p>
             </div>
         </div>
 
-        <div className='container'>
+        <SortBar></SortBar>
+
+        <div className='games-container'>
             <Card
                 title='Monopoly'
                 imageUrl='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx6fwDm83Pu2Rs8pjD0B6pSKqy1Ed6D5JCktNnXWKIW4sPdB9bEdErH5GQcvrbunh2GSc&usqp=CAU'
@@ -35,7 +50,7 @@ export default function Home() {
             />
             </div>
 
-        <div className='container'>
+        <div className='games-container'>
             <Card
                 title='The 7th Citadel'
                 imageUrl='https://i.kickstarter.com/assets/031/065/739/8daa7a522be39973efabe04f29953374_original.png?anim=false&fit=scale-down&origin=ugc&q=92&width=700&sig=%2BdzQ6kncDSilTjxt9A3xAJJJ1zPgPMHeHK7BK5TLL%2B8%3D'
@@ -57,9 +72,10 @@ export default function Home() {
                 body='3.4 Ratings'
             />
         </div>
-
-      
+    
+        {/* <StarRating></StarRating> */}
     </div>
+
   );
 }
 

@@ -41,7 +41,7 @@
     max-width: 3000px;
     margin: 0 auto;
     display: flex;
-    column-gap: 50px;
+    column-gap: 80px;
 }
 
 .review{
@@ -69,17 +69,44 @@
 
 .rating{
     padding: 50px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+    /* vertical-align: center; */
 }
 
 
 .fraction-container{
-    border-style: dotted;
+    border-style: solid;
+    border-width: 1px;
     width: 152px;
     height: 176px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
 }
 .fraction{
     vertical-align: center;
+    text-align: center;
+    align-content: center;
     justify-content: center;
+    /* padding-top: 60px; */
+    /* padding-bottom: 60px; */
     font-size: 50px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.video-content{
+    justify-content: center;
+    display: inline-block;
+    /* padding: 180px; */
+    align-content: center;
+    /* row-gap: 100px; */
+ 
 }
