@@ -11,7 +11,7 @@ function StarRating({empty_color, default_color, ratingValue, size='16'}){
                 return(
                 <Star color={default_color} size={size}/>
                 )
-                
+               // use a gradient css 
             })}
             {[...Array(5-ratingValue)].map(star => {
                 return(

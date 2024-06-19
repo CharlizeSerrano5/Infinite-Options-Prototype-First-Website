@@ -1,6 +1,5 @@
 import React from 'react'
 import './Card.css'
-import Star from './StarTrial'
 import StarRating from './StarRating'
 import { Route } from 'react-router-dom'
 function Card({title, imageUrl, body}) {
@@ -19,10 +18,6 @@ function Card({title, imageUrl, body}) {
                     {title}
                 </div>
                 <div>
-                    {/* <Star 
-                    size='16'
-                    color="gold"
-                    /> */}
                     <StarRating
                         size='16'
                         ratingValue={4}

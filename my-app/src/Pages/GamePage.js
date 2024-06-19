@@ -7,7 +7,6 @@ import StarRating from '../Components/StarRating';
 import './GamePage.css'
 
 export default function GamePage({}) {
-  
   return (
     // document.addEventListener("DOMContentLoaded", function() {
     //   var title = localStorage.getItem("title");
@@ -45,9 +44,6 @@ export default function GamePage({}) {
                 </div>
                 
                 <div className='stars'>
-                    {/* <Star
-                    size='60'
-                    /> */}
                     <StarRating
                         size='60'
                         ratingValue={4}
@@ -59,7 +55,6 @@ export default function GamePage({}) {
             </div>
           </div>
         </div>
-        
       <div className='video-content'>
         <Video
                 title='How to Play'
@@ -69,17 +64,13 @@ export default function GamePage({}) {
                 title='Demo Game'
                 // src="https://www.youtube.com/watch?v=AuWvMgYv03g" 
                 video='https://www.youtube.com/embed/iP0kh9yZak8?si=rqRPF8ejNGpL1_cf'
-
         />
         <Video
                 title='Strategy Tips'
                 // src="https://www.youtube.com/watch?v=AuWvMgYv03g"
                 video='https://www.youtube.com/embed/s-r38R6jtgk?si=5wa33eq5s3hE7MBh'
         />
-      </div>   
-
-      
-                  
+      </div>               
     </div>
   );
 }

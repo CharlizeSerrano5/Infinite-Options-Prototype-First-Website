@@ -44,17 +44,6 @@ function SortBar() {
                     <option>4</option>
                     <option>5</option>
                 </select>
-                {/* <div class="content">
-                    <a href="#">Link1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div> */}
-                <script>
-                    var rating = ['Link1', 'Link2']
-                </script>
-                    
-
-
                     {/* <button onclick="myFunction()" class="dropbtn">Dropdown</button>
                         <div id="myDropdown" class="dropdown-content">
                             <a href="#">Link 1</a>
