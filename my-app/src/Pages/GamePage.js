@@ -5,12 +5,19 @@ import Video from '../Components/Video';
 import './GamePage.css'
 
 export default function GamePage({}) {
+  
   return (
+    // document.addEventListener("DOMContentLoaded", function() {
+    //   var title = localStorage.getItem("title");
+    //   localStorage.removeItem("title");
+    //   console.log("Event Listener: ", title)
+    // }),
     <div className="page">
       <div className='top-bar'>
         <Header></Header>
         <div className='top-content'>
             <h1 className='game-name'>
+              {/* {title} */}
               Monopoly
             </h1>
             <div className='rating-container'>

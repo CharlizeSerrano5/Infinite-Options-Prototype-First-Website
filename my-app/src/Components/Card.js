@@ -3,9 +3,13 @@ import './Card.css'
 import Star from './StarTrial'
 import { Route } from 'react-router-dom'
 function Card({title, imageUrl, body}) {
+    function passVariables(){
+        localStorage.setItem("title", title);
+        // localStorage.setItem("")   
+    }
   return (
     <div className='card-container'>
-        <a href="GamePage">
+        <a href="GamePage" onClick={passVariables()}>
             <div className="image-container">
                 <img src={imageUrl} alt=''/>
             </div>

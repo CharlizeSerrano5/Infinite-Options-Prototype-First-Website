@@ -6,9 +6,31 @@ import StarRating from '../Components/StarRating';
 
 import './Home.css'
 
-export default function Home() {
-  return (
+export default function Home({jsonList}) {
+    // {jsonList.map(listItem => (
+    //     // console.log('toDoList: ', toDoList),
+    //     console.log('listItem: ', listItem)
+        
+    // ))}
+    // const temp_list = JSON.parse(localStorage.getItem('temp_data'));
+
+    // if(temp_list){
+    //     temp_list.map(listItem => (
+    //     // console.log('works'),
+    //     console.log('listItem: ', listItem),
+        
+        
+    //     <Card
+    //     title={listItem.game_name}
+    //     />
+    // ))
+    // }
+
+
+
+    return (
     <div className='App'>
+        
         <div className='top-bar'>
             <Header></Header>
             <div className="quote">
@@ -72,8 +94,24 @@ export default function Home() {
                 body='3.4 Ratings'
             />
         </div>
+
+        <div className='games-container'> 
+            {jsonList.map(listItem => (
+                console.log('works'),
+                console.log('listItem: ', listItem),
+                
+                
+                <Card
+                title={listItem.game_name}
+                />
+            ))
+            }
+            
+            
+
+        </div>
     
-        {/* <StarRating></StarRating> */}
+        <StarRating></StarRating>
     </div>
 
   );
