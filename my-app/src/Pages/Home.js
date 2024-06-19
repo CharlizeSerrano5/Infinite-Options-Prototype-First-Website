@@ -26,8 +26,6 @@ export default function Home({jsonList}) {
     // ))
     // }
 
-
-
     return (
     <div className='App'>
         
