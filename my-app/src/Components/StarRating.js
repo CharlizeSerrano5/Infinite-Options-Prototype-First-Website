@@ -8,12 +8,12 @@ function StarRating({id, empty_color, default_color, ratingValue, size='16'}){
     // let temp_arr = [Array(parseInt(ratingValue))];
     // let temp_arr = [Array(parseInt(ratingValue)).fill(1)];
     return(
-        
         <div className='stars-rating'>
-            {[...Array(parseInt(ratingValue))].map(i => {
+            {[...Array.from(Array(parseInt(ratingValue)).keys())].map(star => {
+                console.log("id: ", star)   
                 return(
                     <Star
-                        key={id}
+                        id={star}
                         color={default_color}
                         size={size}
                     />
@@ -33,6 +33,7 @@ function StarRating({id, empty_color, default_color, ratingValue, size='16'}){
             {[...Array(5-ratingValue)].map(star => {
                 return(
                     <Star
+                        id={star}
                         color={empty_color}
                         size={size}
                     />

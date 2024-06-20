@@ -9,18 +9,13 @@ import './GamePage.css'
 export default function GamePage({title}) {
   console.log('title: ', title);
   return (
-    // document.addEventListener("DOMContentLoaded", function() {
-    //   var title = localStorage.getItem("title");
-    //   localStorage.removeItem("title");
-    //   console.log("Event Listener: ", title)
-    // }),
     <div className="page">
       <div className='top-bar'>
         <Header></Header>
         <div className='top-content'>
             <h1 className='game-name'>
-              {title}
-              {/* Monopoly */}
+              {/* {title} */}
+              Monopoly
             </h1>
             <div className='rating-container'>
               <div className='review'>
@@ -63,12 +58,10 @@ export default function GamePage({title}) {
         />
         <Video
                 title='Demo Game'
-                // src="https://www.youtube.com/watch?v=AuWvMgYv03g" 
                 video='https://www.youtube.com/embed/iP0kh9yZak8?si=rqRPF8ejNGpL1_cf'
         />
         <Video
                 title='Strategy Tips'
-                // src="https://www.youtube.com/watch?v=AuWvMgYv03g"
                 video='https://www.youtube.com/embed/s-r38R6jtgk?si=5wa33eq5s3hE7MBh'
         />
       </div>               
