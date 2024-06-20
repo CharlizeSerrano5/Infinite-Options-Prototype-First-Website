@@ -4,19 +4,39 @@ import Star from './Star';
 import './star-fill.svg';
 
 
-function StarRating({empty_color, default_color, ratingValue, size='16'}){
+function StarRating({id, empty_color, default_color, ratingValue, size='16'}){
+    // let temp_arr = [Array(parseInt(ratingValue))];
+    // let temp_arr = [Array(parseInt(ratingValue)).fill(1)];
     return(
+        
         <div className='stars-rating'>
-            {[...Array(ratingValue)].map(star => {
+            {[...Array(parseInt(ratingValue))].map(i => {
                 return(
-                <Star color={default_color} size={size}/>
+                    <Star
+                        key={id}
+                        color={default_color}
+                        size={size}
+                    />
                 )
                // use a gradient css 
             })}
+            
+{/*             
+            {temp_arr[0].map(star => {
+                return (
+                    <Star
+                        color = {default_color}
+                        size = {size}
+                    />
+                )
+            })} */}
             {[...Array(5-ratingValue)].map(star => {
                 return(
-                <Star color={empty_color} size={size}/>
-                )       
+                    <Star
+                        color={empty_color}
+                        size={size}
+                    />
+                )
             })}
         </div>    
     )

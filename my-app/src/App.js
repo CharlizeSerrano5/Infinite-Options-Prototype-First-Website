@@ -55,11 +55,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home
-          boardGames={boardGames}
+            boardGames={boardGames}
           />}/>
 
           <Route path="/home" element={<Home
-          boardGames={boardGames}
+            boardGames={boardGames}
           />}/>
           <Route path="/gamepage" element={<GamePage
           

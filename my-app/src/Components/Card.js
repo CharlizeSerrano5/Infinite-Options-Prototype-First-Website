@@ -2,8 +2,7 @@ import React from 'react'
 import './Card.css'
 import StarRating from './StarRating'
 import { Route } from 'react-router-dom'
-function Card({title, imageUrl, rating}) {
-    console.log("rating: ", rating)
+function Card({id, title, imageUrl, rating}) {
     function passVariables(){
         localStorage.setItem("title", title);
         // localStorage.setItem("")   
@@ -20,8 +19,9 @@ function Card({title, imageUrl, rating}) {
                 </div>
                 <div>
                     <StarRating
+                        id={id}
                         size='16'
-                        ratingValue={4}
+                        ratingValue={rating}
                         default_color="gold"
                         empty_color="lightgray"
                     />

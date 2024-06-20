@@ -7,26 +7,6 @@ import StarRating from '../Components/StarRating';
 import './Home.css'
 
 export default function Home({boardGames}) {
-    // console.log("jsonList: ", jsonList)
-    // {jsonList.map(listItem => (
-    //     // console.log('toDoList: ', toDoList),
-    //     console.log('listItem: ', listItem)
-        
-    // ))}
-    // const temp_list = JSON.parse(localStorage.getItem('temp_data'));
-
-    // if(temp_list){
-    //     temp_list.map(listItem => (
-    //     // console.log('works'),
-    //     console.log('listItem: ', listItem),
-        
-        
-    //     <Card
-    //     title={listItem.game_name}
-    //     />
-    // ))
-    // }
-
     return (
     <div className='App'>
         
@@ -55,19 +35,19 @@ export default function Home({boardGames}) {
                 rating = "4"
             />
             <Card
-            title='Settlers of Catan'
-            imageUrl='https://upload.wikimedia.org/wikipedia/en/a/a3/Catan-2015-boxart.jpg'
-            rating = "4"
+                title='Settlers of Catan'
+                imageUrl='https://upload.wikimedia.org/wikipedia/en/a/a3/Catan-2015-boxart.jpg'
+                rating = "4"
             />
             <Card
-            title='Agemonia'
-            imageUrl='https://agemonia.com/wp-content/uploads/2023/09/Agemoniabox_3D.png'
-            rating = "4"
+                title='Agemonia'
+                imageUrl='https://agemonia.com/wp-content/uploads/2023/09/Agemoniabox_3D.png'
+                rating = "4"
             />
             <Card
-            title="Captain's Chair"
-            imageUrl='https://shop.wizkids.com/cdn/shop/files/star-trek-captains-chair---cover-flat_20_1_1024x1024.jpg?v=1717454716'
-            rating = "4"
+                title="Captain's Chair"
+                imageUrl='https://shop.wizkids.com/cdn/shop/files/star-trek-captains-chair---cover-flat_20_1_1024x1024.jpg?v=1717454716'
+                rating = "4"
             />
             </div>
 
@@ -99,22 +79,13 @@ export default function Home({boardGames}) {
                 // uncomment and recomment - the issue is local storage
                 // console.log('works'),
                 console.log('listItem: ', listItem),
-                // <Card
-                //     title='Brass: Birmingham'
-                //     imageUrl='https://www.thegamesteward.com/cdn/shop/products/brass-birmingham-retail-board-game-roxley-games-29701407473816.jpg?v=1619731690&width=1200'
-                //     rating = "4"
-                // />
-                
                 <Card
+                    boardGames={listItem.game_uid}
                     title={listItem.game_name}
                     imageUrl={listItem.game_coverImage}
-                    rating = "4"
+                    rating = {listItem.game_rating}
                 />
-            ))
-            }
-            
-            
-
+            ))}
         </div>
     </div>
 
