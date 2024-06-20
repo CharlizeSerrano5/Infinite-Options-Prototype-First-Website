@@ -18,7 +18,6 @@ function App() {
         console.error('Error fetching board games:', error);
       }
     };
-
     fetchBoardGames();
   }, []);
   console.log("boardGames: ", boardGames);
@@ -56,11 +55,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home
-          // jsonList={jsonList()}
+          boardGames={boardGames}
           />}/>
 
           <Route path="/home" element={<Home
-          // jsonList={jsonList()}
+          boardGames={boardGames}
           />}/>
           <Route path="/gamepage" element={<GamePage/>}/>
         </Routes>

@@ -6,7 +6,7 @@ import StarRating from '../Components/StarRating';
 
 import './Home.css'
 
-export default function Home({jsonList}) {
+export default function Home({boardGames}) {
     // console.log("jsonList: ", jsonList)
     // {jsonList.map(listItem => (
     //     // console.log('toDoList: ', toDoList),
@@ -95,21 +95,22 @@ export default function Home({jsonList}) {
         </div>
 
         <div className='games-container'> 
-            {/* {jsonList.map(listItem => (
+            {boardGames.map(listItem => (
                 // uncomment and recomment - the issue is local storage
                 // console.log('works'),
                 console.log('listItem: ', listItem),
-                <Card
-                    title='Brass: Birmingham'
-                    imageUrl='https://www.thegamesteward.com/cdn/shop/products/brass-birmingham-retail-board-game-roxley-games-29701407473816.jpg?v=1619731690&width=1200'
-                    rating = "4"
-                />
-                
                 // <Card
-                //     title={listItem.game_name}
+                //     title='Brass: Birmingham'
+                //     imageUrl='https://www.thegamesteward.com/cdn/shop/products/brass-birmingham-retail-board-game-roxley-games-29701407473816.jpg?v=1619731690&width=1200'
+                //     rating = "4"
                 // />
+                
+                <Card
+                    title={listItem.game_name}
+                    imageUrl={listItem.game_coverImage}
+                />
             ))
-            } */}
+            }
             
             
 

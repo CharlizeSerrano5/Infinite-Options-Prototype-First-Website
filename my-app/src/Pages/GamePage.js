@@ -6,7 +6,7 @@ import StarRating from '../Components/StarRating';
 
 import './GamePage.css'
 
-export default function GamePage({}) {
+export default function GamePage({boardGames}) {
   return (
     // document.addEventListener("DOMContentLoaded", function() {
     //   var title = localStorage.getItem("title");
