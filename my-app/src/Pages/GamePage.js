@@ -2,12 +2,13 @@ import Header from '../Components/Header';
 import Star from '../Components/StarTrial';
 import Video from '../Components/Video';
 import StarRating from '../Components/StarRating';
-
+import { useParams } from 'react-router-dom'
 
 import './GamePage.css'
 
-export default function GamePage({title}) {
-  console.log('title: ', title);
+export default function GamePage({boardGames, listItem}) {
+  // console.log('title: ', title);
+  const params = useParams();
   return (
     <div className="page">
       <div className='top-bar'>

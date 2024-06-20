@@ -77,12 +77,14 @@ export default function Home({boardGames}) {
         <div className='games-container'> 
             {boardGames.map(listItem => (
                 <Card
-                    boardGames={listItem.game_uid}
+                    boardGames={boardGames}
+                    id={listItem.game_uid}
                     title={listItem.game_name}
                     imageUrl={listItem.game_coverImage}
                     rating = {listItem.game_rating}
                     key={listItem.game_uid}
                 />
+                
             ))}
         </div>
     </div>

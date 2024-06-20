@@ -4,7 +4,7 @@ import StarRating from './StarRating'
 import { Route, Link } from 'react-router-dom'
 import GamePage from '../Pages/GamePage'
 
-function Card({id, title, imageUrl, rating}) {
+function Card({boardGames, id, title, imageUrl, rating}) {
     // function passVariables(){
     //     console.log('clicking gets this title: ', title);
     //     <Route path="/gamepage" element={<GamePage

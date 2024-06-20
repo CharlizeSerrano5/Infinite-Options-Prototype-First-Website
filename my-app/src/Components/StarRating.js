@@ -21,7 +21,7 @@ function StarRating({id, empty_color, default_color, ratingValue, size='16'}){
                // use a gradient css 
             })}
             
-{/*             
+            {/*             
             {temp_arr[0].map(star => {
                 return (
                     <Star
