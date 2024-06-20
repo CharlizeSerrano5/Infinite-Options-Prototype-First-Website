@@ -2,23 +2,43 @@ import Header from '../Components/Header';
 import Star from '../Components/StarTrial';
 import Video from '../Components/Video';
 import StarRating from '../Components/StarRating';
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom';
 
 import './GamePage.css'
 
 export default function GamePage({boardGames, listItem}) {
-  // console.log('title: ', title);
-  const params = useParams();
-  let gameData = null
+  const { game_uid } = useParams(); // Retrieves game_uid from the URL
+  const location = useLocation(); // Retrieves location object containing state
+  // const { name, review, rating } = location.state || {};
+  console.log('opened game_uid: ', game_uid)
+  // if (!name || !review || !rating) {
+  //   return <div>Loading...</div>;
+  // }
+  console.log("boardgames: ", boardGames);
+  // console.log("boardGames.game_uid", boardGames.game_uid);
+  console.log("boardGames.game_uid: ", boardGames[0]);
+  const gameData = boardGames.find(temp(game));
+  console.log("game data", gameData);
+  console.log("state: ", location.state)
+
+  function temp({game}){
+    return (game.game_uid);
+  }
+
+  // if (!location.state || !location.state.name || !location.state.description || !location.state.review) {
+  //   return <div>Loading...</div>; // Handle loading state or error scenario
+  // }
+  // const { name, review } = location.state;
+
   return (
-    console.log("params: ", JSON.stringify(params)),
+    // console.log("params: ", JSON.stringify(game_uid)),
 
     <div className="page">
       <div className='top-bar'>
         <Header></Header>
         <div className='top-content'>
             <h1 className='game-name'>
-              {/* {title} */}
+              {/* {name} */}
               Monopoly
             </h1>
             <div className='rating-container'>

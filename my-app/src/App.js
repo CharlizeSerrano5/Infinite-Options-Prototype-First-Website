@@ -72,6 +72,8 @@ function App() {
           />}/>
 
           <Route path="/gamepage/:game_uid" element={<GamePage
+              boardGames={boardGames}
+
           />}/>
         </Routes>
       </BrowserRouter>

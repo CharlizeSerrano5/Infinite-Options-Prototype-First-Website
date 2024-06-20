@@ -1,5 +1,6 @@
 import Header from '../Components/Header';
 import SortBar from '../Components/SortBar';
+import { Route, Link } from 'react-router-dom'
 
 import Card from '../Components/Card';
 import StarRating from '../Components/StarRating';
@@ -76,14 +77,26 @@ export default function Home({boardGames}) {
 
         <div className='games-container'> 
             {boardGames.map(listItem => (
+                <Link
+                key={listItem.game_uid}
+                to={{
+                  pathname: `/gamepage/${listItem.game_uid}`,
+                  state: {
+                    name: listItem.game_name,
+                  //   description: game.description,
+                    review: listItem.game_rating,
+                  },
+                }}
+              >
                 <Card
-                    boardGames={boardGames}
+                    // boardGames={boardGames}
                     id={listItem.game_uid}
                     title={listItem.game_name}
                     imageUrl={listItem.game_coverImage}
                     rating = {listItem.game_rating}
-                    key={listItem.game_uid}
+                    // key={listItem.game_uid}
                 />
+                </Link>
             ))}
         </div>
     </div>

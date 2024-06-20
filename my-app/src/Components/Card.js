@@ -11,13 +11,16 @@ function Card({boardGames, id, title, imageUrl, rating}) {
     //         title={title}    
     //     />}/>
     // }
-    console.log("card_id / name: ", id, title)
+    // console.log("card_id / name: ", id, title)
   return (
     <div className='card-container'>
-        <Link to='/gamepage/${game_uid}'
+        {/* <Link to='/gamepage/${game_uid}'
             id = {id}
-        >
+        > */}
         {/* <a href="GamePage" onClick={passVariables()}>    */}
+
+
+        
             <div className="image-container">
                 <img src={imageUrl} alt=''/>
             </div>
@@ -36,7 +39,7 @@ function Card({boardGames, id, title, imageUrl, rating}) {
                 </div>
                 
             </div>
-        </Link>
+        {/* </Link> */}
     </div>
   )
 }
