@@ -20,7 +20,7 @@ function App() {
     };
     fetchBoardGames();
   }, []);
-  console.log("boardGames: ", boardGames);
+  // console.log("boardGames: ", boardGames);
 
   // function jsonList(){
   //   console.log("in function that is going to call the endpoint");

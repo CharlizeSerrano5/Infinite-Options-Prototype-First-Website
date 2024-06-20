@@ -1,15 +1,22 @@
 import React from 'react'
 import './Card.css'
 import StarRating from './StarRating'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
+import GamePage from '../Pages/GamePage'
+
 function Card({id, title, imageUrl, rating}) {
-    function passVariables(){
-        localStorage.setItem("title", title);
-        // localStorage.setItem("")   
-    }
+    // function passVariables(){
+    //     console.log('clicking gets this title: ', title);
+    //     <Route path="/gamepage" element={<GamePage
+    //         title={title}    
+    //     />}/>
+    // }
   return (
     <div className='card-container'>
-        <a href="GamePage" onClick={passVariables()}>
+        <Link to="/gamepage"
+            title={title}
+        >
+        {/* <a href="GamePage" onClick={passVariables()}>    */}
             <div className="image-container">
                 <img src={imageUrl} alt=''/>
             </div>
@@ -28,7 +35,7 @@ function Card({id, title, imageUrl, rating}) {
                 </div>
                 
             </div>
-        </a>
+        </Link>
     </div>
   )
 }

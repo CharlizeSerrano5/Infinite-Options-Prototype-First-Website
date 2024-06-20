@@ -78,7 +78,7 @@ export default function Home({boardGames}) {
             {boardGames.map(listItem => (
                 // uncomment and recomment - the issue is local storage
                 // console.log('works'),
-                console.log('listItem: ', listItem),
+                // console.log('listItem: ', listItem),
                 <Card
                     boardGames={listItem.game_uid}
                     title={listItem.game_name}

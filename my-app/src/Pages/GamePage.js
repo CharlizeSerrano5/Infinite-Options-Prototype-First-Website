@@ -6,7 +6,8 @@ import StarRating from '../Components/StarRating';
 
 import './GamePage.css'
 
-export default function GamePage({boardGames}) {
+export default function GamePage({title}) {
+  console.log('title: ', title);
   return (
     // document.addEventListener("DOMContentLoaded", function() {
     //   var title = localStorage.getItem("title");
@@ -18,8 +19,8 @@ export default function GamePage({boardGames}) {
         <Header></Header>
         <div className='top-content'>
             <h1 className='game-name'>
-              {/* {title} */}
-              Monopoly
+              {title}
+              {/* Monopoly */}
             </h1>
             <div className='rating-container'>
               <div className='review'>
