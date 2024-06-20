@@ -8,8 +8,11 @@ import './GamePage.css'
 
 export default function GamePage({boardGames, listItem}) {
   // console.log('title: ', title);
-  let {id} = useParams();
+  const params = useParams();
+  let gameData = null
   return (
+    console.log("params: ", JSON.stringify(params)),
+
     <div className="page">
       <div className='top-bar'>
         <Header></Header>

@@ -71,7 +71,8 @@ function App() {
 
           />}/>
 
-          <Route path="/gamepage/:id" element={<GamePage
+          <Route path="/gamepage/:game_uid" element={<GamePage
+            
           />}/>
         </Routes>
       </BrowserRouter>

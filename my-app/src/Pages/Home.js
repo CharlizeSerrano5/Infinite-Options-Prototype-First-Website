@@ -84,7 +84,6 @@ export default function Home({boardGames}) {
                     rating = {listItem.game_rating}
                     key={listItem.game_uid}
                 />
-                
             ))}
         </div>
     </div>
