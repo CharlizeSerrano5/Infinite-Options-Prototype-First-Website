@@ -3,6 +3,7 @@ import './Card.css'
 import StarRating from './StarRating'
 import { Route } from 'react-router-dom'
 function Card({title, imageUrl, rating}) {
+    console.log("rating: ", rating)
     function passVariables(){
         localStorage.setItem("title", title);
         // localStorage.setItem("")   

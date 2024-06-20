@@ -108,6 +108,7 @@ export default function Home({boardGames}) {
                 <Card
                     title={listItem.game_name}
                     imageUrl={listItem.game_coverImage}
+                    rating = "4"
                 />
             ))
             }

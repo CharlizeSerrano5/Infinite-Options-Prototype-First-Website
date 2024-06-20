@@ -61,7 +61,9 @@ function App() {
           <Route path="/home" element={<Home
           boardGames={boardGames}
           />}/>
-          <Route path="/gamepage" element={<GamePage/>}/>
+          <Route path="/gamepage" element={<GamePage
+          
+          />}/>
         </Routes>
       </BrowserRouter>
     </div>
