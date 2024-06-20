@@ -10,10 +10,10 @@ function StarRating({id, empty_color, default_color, ratingValue, size='16'}){
     return(
         <div className='stars-rating'>
             {[...Array.from(Array(parseInt(ratingValue)).keys())].map(star => {
-                console.log("id: ", star)   
+                console.log("id: ", star+id)   
                 return(
                     <Star
-                        id={star}
+                        id={star+id}
                         color={default_color}
                         size={size}
                     />

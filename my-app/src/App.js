@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './Pages/Home'
 import GamePage from './Pages/GamePage'
+import Context from './Components/Context'
+
 
 function App() {
   const [boardGames, setBoardGames] = useState([]);
@@ -52,6 +54,9 @@ function App() {
   return (
     <div>
       {/* {jsonList()} */}
+      {/* <Context.Provider value={boardGames}>
+        <Router />
+      </Context.Provider> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home
