@@ -7,10 +7,16 @@ function Video({title, video}) {
     <div className='video-container'>
         <div className='video-title'>
             {title}
+            {/* <a href={video} target="_blank">{title}</a> */}
+
         </div>
         <div className="video-player">
             <iframe width="840" height="480" src={video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
+
+        
+        <a href={video} target="_blank">Watch on BoardGameGeek</a>
+
         {/* {isYouTube ? (
         <iframe
           width="560"
