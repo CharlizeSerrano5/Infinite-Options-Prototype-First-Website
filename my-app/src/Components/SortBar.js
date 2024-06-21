@@ -17,9 +17,6 @@ function SortBar() {
                 
             </div>
             <div className="sortBar_center">
-
-                
-                {/* place a search bar here */}
                 <div className="search-wrapper">
                     
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">

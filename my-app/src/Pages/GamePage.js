@@ -117,7 +117,7 @@ export default function GamePage({boardGames, listItem}) {
       {videos.map(listItem => (
           <Video key={`${listItem.video_type}-${listItem.video_video_uid}`} id={`${listItem.video_type}-${listItem.video_video_uid}`}
           title={listItem.video_type}
-          {...console.log("MAPPING VIDEO TYPE", listItem.video_type)}
+          // {...console.log("MAPPING VIDEO TYPE", listItem.video_type)}
           // video='https://www.youtube.com/embed/AuWvMgYv03g?si=cb7Rc8A_TeQptOVM'
           video={listItem.video_link}
           {...console.log("MAPPING LINK", listItem.video_type, listItem.video_link)}

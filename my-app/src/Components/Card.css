@@ -7,6 +7,9 @@
     /* border-color: lightgray; */
     border-radius: 5px;
     background-color: white;
+    position: relative;
+    
+
 }
 
 .image-container img{
@@ -14,7 +17,8 @@
     width: 270px;
     height: 270px;
     object-fit: cover;
-
+    position: relative;
+    justify-content: center;
 }
 .card-title{
     font-size: 20px;
