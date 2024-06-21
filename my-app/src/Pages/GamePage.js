@@ -18,6 +18,10 @@ export default function GamePage({boardGames, listItem}) {
   const gameData = boardGames.find((game) => game.game_uid === game_uid);
   console.log("game data", gameData);
   console.log("state: ", location.state)
+  if (!gameData) {
+    return <div>Loading...</div>;
+  }
+
 
   // function temp({game}){
   //   return (game.game_uid);
@@ -36,8 +40,8 @@ export default function GamePage({boardGames, listItem}) {
         <Header></Header>
         <div className='top-content'>
             <h1 className='game-name'>
-              {/* {name} */}
-              Monopoly
+              {gameData.game_name}
+              {/* Monopoly */}
             </h1>
             <div className='rating-container'>
               <div className='review'>
@@ -45,11 +49,12 @@ export default function GamePage({boardGames, listItem}) {
                   My Review
                 </p>
                 <p className='review-paragraph'>
-                  When I play Monopoly, it generally lasts about an hour on average, which might sound reasonable, but is excessive. A game's length should complement the number of interesting decisions it has. A decent strategy is to buy every property you land on and try to trade for the red, orange, or purple properties. Orange has the highest expected return in a game, while red has the highest expected return per turn. The weakest properties are the Browns, the Blues (Boardwalk and Park place), and the Greens.
+                  {/* When I play Monopoly, it generally lasts about an hour on average, which might sound reasonable, but is excessive. A game's length should complement the number of interesting decisions it has. A decent strategy is to buy every property you land on and try to trade for the red, orange, or purple properties. Orange has the highest expected return in a game, while red has the highest expected return per turn. The weakest properties are the Browns, the Blues (Boardwalk and Park place), and the Greens. */}
+                  {gameData.game_review}
                 </p>
-                <p className='review-paragraph'>
+                {/* <p className='review-paragraph'>
                   There are a number of interesting decisions for the player to make about trades. I've seen screw-you trade alliances against players, but because only three are needed for a set, which can then be upgraded indefinitely, it's fairly common for only two players to bargain back and forth over a set. One has two properties and the other has one. This usually means that a single inexperienced player can make a single trade which tips the game, especially if they're trading St James Place for Boardwalk, giving the other player a complete set.
-                </p>    
+                </p>     */}
               </div>
               <div className='rating'>
                 <h2>
@@ -57,14 +62,14 @@ export default function GamePage({boardGames, listItem}) {
                 </h2>
                 <div className='fraction-container'>
                   <h1 className='fraction'>
-                    4/5
+                    {gameData.game_rating}/5
                   </h1>
                 </div>
                 
                 <div className='stars'>
                     <StarRating
                         size='60'
-                        ratingValue={4}
+                        ratingValue={gameData.game_rating}
                         default_color="black"
                         empty_color="white"
                     />
