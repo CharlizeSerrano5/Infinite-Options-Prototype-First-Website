@@ -1,13 +1,17 @@
+import axios from 'axios';
+
 import Header from '../Components/Header';
 import SortBar from '../Components/SortBar';
 import { Route, Link } from 'react-router-dom'
+import { useEffect, useState } from 'react';
 
 import Card from '../Components/Card';
 import StarRating from '../Components/StarRating';
 
 import './Home.css'
 
-export default function Home({boardGames}) {
+export default function Home({boardGames, setBoardGames}) {
+    
     return (
     <div className='App'>
         
@@ -16,7 +20,6 @@ export default function Home({boardGames}) {
             <div className="quote">
                 <p>
                     Level Up Your Gaming Experience: 
-
                 </p>
                 <p>
                     Dive into the Ultimate Blog for
@@ -87,15 +90,15 @@ export default function Home({boardGames}) {
                     review: listItem.game_rating,
                   },
                 }}
-              >
-                <Card
-                    // boardGames={boardGames}
-                    id={listItem.game_uid}
-                    title={listItem.game_name}
-                    imageUrl={listItem.game_coverImage}
-                    rating = {listItem.game_rating}
-                    // key={listItem.game_uid}
-                />
+                >
+                    <Card
+                        // boardGames={boardGames}
+                        id={listItem.game_uid}
+                        title={listItem.game_name}
+                        imageUrl={listItem.game_coverImage}
+                        rating = {listItem.game_rating}
+                        // key={listItem.game_uid}
+                    />
                 </Link>
             ))}
         </div>

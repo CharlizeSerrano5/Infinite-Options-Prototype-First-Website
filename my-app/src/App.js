@@ -5,78 +5,28 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './Pages/Home'
 import GamePage from './Pages/GamePage'
 import Context from './Components/Context'
-
+import Main from './Main';
 
 function App() {
   const [boardGames, setBoardGames] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchBoardGames = async () => {
-      try {
-        const response = await axios.get('https://hl2qrc5x51.execute-api.us-west-1.amazonaws.com/dev/boardgames');
-        // console.log("response data result:", response.data.boardgames.result);
-        setBoardGames(response.data.boardgames.result);
-      } catch (error) {
-        console.error('Error fetching board games:', error);
-      }
-    };
-    fetchBoardGames();
+      const fetchBoardGames = async () => {
+        try {
+            const response = await axios.get('https://hl2qrc5x51.execute-api.us-west-1.amazonaws.com/dev/boardgames');
+            // console.log("response data result:", response.data.boardgames.result);
+            setBoardGames(response.data.boardgames.result);
+        } catch (error) {
+            console.error('Error fetching board games:', error);
+        }
+      };
+      fetchBoardGames();
   }, []);
-  // console.log("boardGames: ", boardGames);
 
-  // function jsonList(){
-  //   console.log("in function that is going to call the endpoint");
-  //   // const jsonArray = [];
-  //   var jsonArray = [];
-  //   const populateData = (data) => {jsonArray.push(data)};
-  //     axios.get(`https://hl2qrc5x51.execute-api.us-west-1.amazonaws.com/dev/boardgames`)
-  //     .then(response => {
-  //       // use a useEffect(), create a dependency
-  //       // handle the response
-  //         // localStorage.setItem('cachedData', JSON.stringify(response.data.boardgames.result));
-  //         // console.log();
-  //         // const temp_data = JSON.parse(localStorage.getItem('cachedData'));
-  //         // console.log("temp data: ", temp_data);
-
-  //         const jsonData = response.data; // object file
-  //         console.log(jsonData);
-  //         const result = jsonData.boardgames.result;
-  //         for (let i = 0; i < result.length; i++) {
-  //           populateData(jsonData.boardgames.result[i]); 
-  //         }
-  //         console.log("result: ", result);
-  //     })
-  //   console.log('jsonArray: ', jsonArray);
-  //   return jsonArray;
-  // }
-
-  
   return (
     <div>
-      {/* {jsonList()} */}
-      {/* <Context.Provider value={boardGames}>
-        <Router />
-      </Context.Provider> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home
-            boardGames={boardGames}
-          />}/>
-
-          <Route path="/home" element={<Home
-            boardGames={boardGames}
-          />}/>
-          <Route path="/gamepage" element={<GamePage
-            boardGames={boardGames}
-
-          />}/>
-
-          <Route path="/gamepage/:game_uid" element={<GamePage
-              boardGames={boardGames}
-
-          />}/>
-        </Routes>
-      </BrowserRouter>
+      <Main boardGames={boardGames} setBoardGames={setBoardGames} />
     </div>
   );
 }

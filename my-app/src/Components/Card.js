@@ -4,23 +4,9 @@ import StarRating from './StarRating'
 import { Route, Link } from 'react-router-dom'
 import GamePage from '../Pages/GamePage'
 
-function Card({boardGames, id, title, imageUrl, rating}) {
-    // function passVariables(){
-    //     console.log('clicking gets this title: ', title);
-    //     <Route path="/gamepage" element={<GamePage
-    //         title={title}    
-    //     />}/>
-    // }
-    // console.log("card_id / name: ", id, title)
+function Card({ id, title, imageUrl, rating}) {
   return (
-    <div className='card-container'>
-        {/* <Link to='/gamepage/${game_uid}'
-            id = {id}
-        > */}
-        {/* <a href="GamePage" onClick={passVariables()}>    */}
-
-
-        
+    <div className='card-container'>        
             <div className="image-container">
                 <img src={imageUrl} alt=''/>
             </div>
@@ -39,7 +25,6 @@ function Card({boardGames, id, title, imageUrl, rating}) {
                 </div>
                 
             </div>
-        {/* </Link> */}
     </div>
   )
 }

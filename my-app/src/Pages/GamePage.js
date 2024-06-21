@@ -1,40 +1,67 @@
 import Header from '../Components/Header';
-import Star from '../Components/StarTrial';
 import Video from '../Components/Video';
 import StarRating from '../Components/StarRating';
-import { useLocation, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 
 import './GamePage.css'
 
 export default function GamePage({boardGames, listItem}) {
   const { game_uid } = useParams(); // Retrieves game_uid from the URL
-  const location = useLocation(); // Retrieves location object containing state
-  // const { name, review, rating } = location.state  {};
-  console.log('opened game_uid: ', game_uid)
-  // if (!name  !review || !rating) {
-  //   return <div>Loading...</div>;
-  // }
-  console.log("boardgames: ", boardGames);
+  const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+
+  // console.log('opened game_uid: ', game_uid)
   const gameData = boardGames.find((game) => game.game_uid === game_uid);
-  console.log("game data", gameData);
-  console.log("state: ", location.state)
-  if (!gameData) {
+  // console.log("game data", gameData);
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+          const response = await axios.get(`https://hl2qrc5x51.execute-api.us-west-1.amazonaws.com/dev/videos/${game_uid}`);
+          console.log("response data result:", response.data.videos.result);
+          setVideos(response.data.videos.result);
+          setLoading(false);
+      } catch (error) {
+          console.error('Error fetching videos of games:', error);
+          setLoading(true);
+      }
+    };
+    fetchVideos();
+  }, []);
+
+  let videoPlay, videoReview, videoInstructions;
+
+  if (gameData){
+    console.log("game data true");
+    videoPlay = videos.find((video) => video.video_type === "Play");
+    if (!videoPlay){
+      videoPlay = "https://www.youtube.com/embed/AuWvMgYv03g?si=cb7Rc8A_TeQptOVM"
+    }
+    // console.log("video link for play: ", videoPlay);
+    videoReview = videos.find((video) => video.video_type === "Review");
+    if (!videoReview){
+      videoReview = "https://www.youtube.com/embed/iP0kh9yZak8?si=rqRPF8ejNGpL1_cf"
+    }
+    console.log("video link for review: ", videoReview);
+    videoInstructions = videos.find((video) => video.video_type === "Instrutions");
+    // console.log("video link for instructions: ", videoInstructions);
+    if (!videoInstructions){
+      videoInstructions = "https://www.youtube.com/embed/s-r38R6jtgk?si=5wa33eq5s3hE7MBh"
+    }
+  }
+  else if (!gameData || loading == true){
     return <div>Loading...</div>;
   }
 
-
-  // function temp({game}){
-  //   return (game.game_uid);
-  // }
-
-  // if (!location.state || !location.state.name || !location.state.description || !location.state.review) {
-  //   return <div>Loading...</div>; // Handle loading state or error scenario
-  // }
-  // const { name, review } = location.state;
+  console.log("play link", videoPlay.video_link);
+  console.log("review link", videoReview.video_link);
+  console.log("instructino link", videoInstructions.video_link);
+  // console.log('videos: ', videos);
 
   return (
-    // console.log("params: ", JSON.stringify(game_uid)),
-
     <div className="page">
       <div className='top-bar'>
         <Header></Header>
@@ -79,17 +106,21 @@ export default function GamePage({boardGames, listItem}) {
           </div>
         </div>
       <div className='video-content'>
+        
         <Video
                 title='How to Play'
-                video='https://www.youtube.com/embed/AuWvMgYv03g?si=cb7Rc8A_TeQptOVM'
+                // video='https://www.youtube.com/embed/AuWvMgYv03g?si=cb7Rc8A_TeQptOVM'
+                  video={videoPlay.video_link}
         />
         <Video
                 title='Demo Game'
-                video='https://www.youtube.com/embed/iP0kh9yZak8?si=rqRPF8ejNGpL1_cf'
+                // video='https://www.youtube.com/embed/iP0kh9yZak8?si=rqRPF8ejNGpL1_cf'
+                video={videoReview.video_link}
         />
         <Video
                 title='Strategy Tips'
-                video='https://www.youtube.com/embed/s-r38R6jtgk?si=5wa33eq5s3hE7MBh'
+                // video='https://www.youtube.com/embed/s-r38R6jtgk?si=5wa33eq5s3hE7MBh'
+                video={videoInstructions.video_link}
         />
       </div>               
     </div>
