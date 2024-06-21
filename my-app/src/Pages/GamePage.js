@@ -9,21 +9,19 @@ import './GamePage.css'
 export default function GamePage({boardGames, listItem}) {
   const { game_uid } = useParams(); // Retrieves game_uid from the URL
   const location = useLocation(); // Retrieves location object containing state
-  // const { name, review, rating } = location.state || {};
+  // const { name, review, rating } = location.state  {};
   console.log('opened game_uid: ', game_uid)
-  // if (!name || !review || !rating) {
+  // if (!name  !review || !rating) {
   //   return <div>Loading...</div>;
   // }
   console.log("boardgames: ", boardGames);
-  // console.log("boardGames.game_uid", boardGames.game_uid);
-  console.log("boardGames.game_uid: ", boardGames[0]);
-  const gameData = boardGames.find(temp(game));
+  const gameData = boardGames.find((game) => game.game_uid === game_uid);
   console.log("game data", gameData);
   console.log("state: ", location.state)
 
-  function temp({game}){
-    return (game.game_uid);
-  }
+  // function temp({game}){
+  //   return (game.game_uid);
+  // }
 
   // if (!location.state || !location.state.name || !location.state.description || !location.state.review) {
   //   return <div>Loading...</div>; // Handle loading state or error scenario

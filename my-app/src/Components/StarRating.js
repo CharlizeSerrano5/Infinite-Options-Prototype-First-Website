@@ -12,11 +12,14 @@ function StarRating({id, empty_color, default_color, ratingValue, size='16'}){
             {[...Array.from(Array(parseInt(ratingValue)).keys())].map(star => {
                 // console.log("id: ", star+id)   
                 return(
-                    <Star
-                        id={star+id}
-                        color={default_color}
-                        size={size}
-                    />
+                    // <Star
+                    //     id={star+id}
+                    //     color={default_color}
+                    //     size={size}
+                    // />
+
+                    <Star key={`filled-${star}-${id}`} id={`filled-${star}-${id}`} color={default_color} size={size} />
+
                 )
                // use a gradient css 
             })}
@@ -32,11 +35,14 @@ function StarRating({id, empty_color, default_color, ratingValue, size='16'}){
             })} */}
             {[...Array(5-ratingValue)].map(star => {
                 return(
-                    <Star
-                        id={star}
-                        color={empty_color}
-                        size={size}
-                    />
+                    // <Star
+                    //     id={star}
+                    //     color={empty_color}
+                    //     size={size}
+                    // />
+
+                    <Star key={`empty-${star}-${id}`} id={`empty-${star}-${id}`} color={empty_color} size={size} />
+
                 )
             })}
         </div>    
