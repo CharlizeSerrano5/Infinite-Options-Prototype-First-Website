@@ -1,7 +1,15 @@
 import React from 'react';
 import './SortBar.css';
 
-function SortBar() {
+function SortBar({ onSearch, onRatingFilter }) {
+    const handleSearchChange = (e) => {
+        onSearch(e.target.value);
+    }
+
+    const handleRatingChange = (e) => {
+        onRatingFilter(e.target.value);
+    }
+
     return (
         <div className="sortBar">
             <div className="sortBar_left">
@@ -22,7 +30,7 @@ function SortBar() {
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                     </svg>
-                    <input type='search' placeholder="Search" id='search'>
+                    <input type='search' placeholder="Search" id='search' onChange={handleSearchChange}>
                     </input>
                 </div>
             </div>
@@ -33,7 +41,7 @@ function SortBar() {
                         <path fillRule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"/>
                         </svg>
                 </button> */}
-                <select className='form-control' placeholder= "Rating" name='' id='rating'>
+                <select className='form-control' placeholder= "Rating" name='' id='rating' onChange={handleRatingChange}>
                     <option>Rating</option>
                     <option>1</option>
                     <option>2</option>

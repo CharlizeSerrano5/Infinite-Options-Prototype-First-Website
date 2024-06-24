@@ -11,7 +11,40 @@ import StarRating from '../Components/StarRating';
 import './Home.css'
 
 export default function Home({boardGames, setBoardGames}) {
-    
+    const [ratingFilter, setRatingFilter] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+    }
+
+    const handleRatingFilter = (rating) => {
+        setRatingFilter(rating);
+    }
+
+    const filteredAndSortedGames = boardGames
+        .filter(game => 
+            game.game_name.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+        .sort((a, b) => {
+            if (ratingFilter) {
+                const rating = parseInt(ratingFilter, 10); // convert to base 10
+                const aRating = parseInt(a.game_rating, 10);
+                const bRating = parseInt(b.game_rating, 10);
+
+                if (aRating === rating && bRating !== rating) {
+                    return -1;
+                }
+                if (aRating !== rating && bRating === rating) {
+                    return 1;
+                }
+                if (aRating !== bRating) {
+                    return bRating - aRating; // Sort by rating descending
+                }
+            }
+            return 0;
+        });
+
     return (
     <div className='App'>
         
@@ -30,7 +63,7 @@ export default function Home({boardGames, setBoardGames}) {
             </div>
         </div>
 
-        <SortBar></SortBar>
+        <SortBar onSearch={handleSearch} onRatingFilter={handleRatingFilter}></SortBar>
 
         {/* <div className='games-container'>
             <Card
@@ -79,7 +112,7 @@ export default function Home({boardGames, setBoardGames}) {
         </div> */}
 
         <div className='games-container'> 
-            {boardGames.map(listItem => (
+            {filteredAndSortedGames.map((listItem, index) => (
                 <Link
                 key={listItem.game_uid}
                 to={{

@@ -10,7 +10,7 @@ import Main from './Main';
 function App() {
   const [boardGames, setBoardGames] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
       const fetchBoardGames = async () => {
         try {

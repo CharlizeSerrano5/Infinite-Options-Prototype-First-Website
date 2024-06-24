@@ -57,7 +57,7 @@ export default function GamePage({boardGames, listItem}) {
       videoInstructions = 'https://www.youtube.com/embed/s-r38R6jtgk?si=5wa33eq5s3hE7MBh'
     }
   }
-  else if (!gameData || loading == true){
+  else if (!gameData || loading === true){
     return <div>Loading...</div>;
   }
 
@@ -82,10 +82,21 @@ export default function GamePage({boardGames, listItem}) {
                 </p>
                 <p className='review-paragraph'>
                   {/* When I play Monopoly, it generally lasts about an hour on average, which might sound reasonable, but is excessive. A game's length should complement the number of interesting decisions it has. A decent strategy is to buy every property you land on and try to trade for the red, orange, or purple properties. Orange has the highest expected return in a game, while red has the highest expected return per turn. The weakest properties are the Browns, the Blues (Boardwalk and Park place), and the Greens. */}
-                  {gameData.game_review?
+                  {/* {gameData.game_review?
                   gameData.game_review: 
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."        
-                  }
+                  } */}
+
+                  {gameData.game_review ? (
+                      gameData.game_review
+                  ) : (
+                      gameData.game_description ? (
+                          gameData.game_description
+                      ) : (
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                      )
+                  )}
+                  
                 </p>
                 {/* <p className='review-paragraph'>
                   There are a number of interesting decisions for the player to make about trades. I've seen screw-you trade alliances against players, but because only three are needed for a set, which can then be upgraded indefinitely, it's fairly common for only two players to bargain back and forth over a set. One has two properties and the other has one. This usually means that a single inexperienced player can make a single trade which tips the game, especially if they're trading St James Place for Boardwalk, giving the other player a complete set.
