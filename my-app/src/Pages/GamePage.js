@@ -39,27 +39,27 @@ export default function GamePage({boardGames, listItem}) {
 
   let videoPlay, videoReview, videoInstructions;
 
-  if (gameData){
-    console.log("game data true");
-    videoPlay = videos.find((video) => video.video_type === "Play");
-    if (!videoPlay){
-      videoPlay = 'https://www.youtube.com/embed/AuWvMgYv03g?si=cb7Rc8A_TeQptOVM'
-    }
-    // console.log("video link for play: ", videoPlay);
-    videoReview = videos.find((video) => video.video_type === "Review");
-    if (!videoReview){
-      videoReview = 'https://www.youtube.com/embed/iP0kh9yZak8?si=rqRPF8ejNGpL1_cf'
-    }
-    console.log("video link for review: ", videoReview);
-    videoInstructions = videos.find((video) => video.video_type === "Instrutions");
-    // console.log("video link for instructions: ", videoInstructions);
-    if (!videoInstructions){
-      videoInstructions = 'https://www.youtube.com/embed/s-r38R6jtgk?si=5wa33eq5s3hE7MBh'
-    }
-  }
-  else if (!gameData || loading === true){
-    return <div>Loading...</div>;
-  }
+  // if (gameData){
+  //   console.log("game data true");
+  //   videoPlay = videos.find((video) => video.video_type === "Play");
+  //   if (!videoPlay){
+  //     videoPlay = 'https://www.youtube.com/embed/AuWvMgYv03g?si=cb7Rc8A_TeQptOVM'
+  //   }
+  //   // console.log("video link for play: ", videoPlay);
+  //   videoReview = videos.find((video) => video.video_type === "Review");
+  //   if (!videoReview){
+  //     videoReview = 'https://www.youtube.com/embed/iP0kh9yZak8?si=rqRPF8ejNGpL1_cf'
+  //   }
+  //   console.log("video link for review: ", videoReview);
+  //   videoInstructions = videos.find((video) => video.video_type === "Instrutions");
+  //   // console.log("video link for instructions: ", videoInstructions);
+  //   if (!videoInstructions){
+  //     videoInstructions = 'https://www.youtube.com/embed/s-r38R6jtgk?si=5wa33eq5s3hE7MBh'
+  //   }
+  // }
+  // else if (!gameData || loading === true){
+  //   return <div>Loading...</div>;
+  // }
 
   // console.log("play link", videoPlay.video_link);
   // console.log("review link", videoReview.video_link);
